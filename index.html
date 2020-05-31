@@ -7,30 +7,36 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Black Jack</h1>
-    <div id="information">
-      <div id="dealer">
-        <span id="dealer-name"></span>
-        <span id="dealer-points"></span>
-        <span id="dealer-score"></span>
+    <main>
+      <h1>Black Jack</h1>
+      <div id="information">
+        <div id="game">
+          <span id="deck">Deck: 52 Cards</span>
+          <span id="result">Good Luck!</span>
+        </div>
+        <div id="dealer">
+          <span id="dealer-name">Dealer</span>
+          <span id="dealer-points">Count: 0</span>
+          <span id="dealer-score">Wins: 0</span>
+        </div>
+        <div id="dealer-hand">
+          <div class="default-card"></div>
+        </div>
+        <div id="player">
+          <span id="player-name">Player</span>
+          <span id="player-points">Count: 0</span>
+          <span id="player-score">Wins: 0</span>
+        </div>
+        <div id="player-hand">
+          <div class="default-card"></div>
+        </div>
       </div>
-      <div id="player">
-        <span id="player-name"></span>
-        <span id="player-points"></span>
-        <span id="player-score"></span>
+      <div id="buttons">
+        <button id="btn-start" class="button">Start</button>
+        <button id="btn-hit" class="button">Hit</button>
+        <button id="btn-stand" class="button">Stand</button>
       </div>
-      <div id="game">
-        <span id="deck"></span>
-        <span id="result">Good Luck!</span>
-      </div>
-    </div>
-    <div id="dealer-hand"></div>
-    <div id="player-hand"></div>
-    <div id="buttons">
-      <button id="btn-start" class="button">Start</button>
-      <button id="btn-hit" class="button">Hit</button>
-      <button id="btn-stand" class="button">Stand</button>
-    </div>
-    <script src="code.js" type="text/javascript"></script>
+      <script src="code.js" type="text/javascript"></script>
+    </main>
   </body>
 </html>

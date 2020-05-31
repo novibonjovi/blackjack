@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +9,242 @@
 
 html,
 body {
+  font-family: 'Press Start 2P';
+  font-size: 1rem;
   height: 100%;
-  background-color: coral;
+  background-image: url(/img/pattern.png);
+  background-size: 300px;
+}
+
+h1 {
+  font-size: 2.75rem;
+  background-color: #e6e6e6;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  border-bottom: 5px solid #828282;
+}
+
+h1::after {
+  content: '';
+  margin-left: 100px;
+  margin-top: -7px;
+  background-image: url(/img/heart.png);
+  background-size: 50px;
+  height: 50px;
+  width: 50px;
+}
+
+h1::before {
+  content: '';
+  margin-right: 100px;
+  margin-top: -7px;
+  background-image: url(/img/heart.png);
+  background-size: 50px;
+  height: 50px;
+  width: 50px;
+}
+
+main {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  padding: 10px;
+  background-color: white;
+  border: 5px solid #828282;
+  border-radius: 3px;
+  width: 1000px;
+
+  #result {
+    margin-top: 20px;
+  }
+}
+
+#dealer {
+  margin-top: 50px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  border: 5px solid #828282;
+  border-radius: 3px;
+  width: 1000px;
+
+  #dealer-name {
+    margin: 0px 50px 0px 50px;
+    text-decoration: underline;
+  }
+
+  #dealer-points {
+    margin: 0px 50px 0px 50px;
+  }
+
+  #dealer-score {
+    margin: 0px 50px 0px 50px;
+  }
+}
+
+#player {
+  margin-top: 50px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  border: 5px solid #828282;
+  border-radius: 3px;
+  width: 1000px;
+
+  #player-name {
+    margin: 0px 50px 0px 50px;
+    text-decoration: underline;
+  }
+
+  #player-points {
+    margin: 0px 50px 0px 50px;
+  }
+
+  #player-score {
+    margin: 0px 50px 0px 50px;
+  }
+}
+
+#dealer-hand,
+#player-hand {
+  display: flex;
+  padding: 5px;
+  margin-top: 20px;
+  border: 5px solid #828282;
+  border-radius: 3px;
+  background-color: #eed9d9;
+  justify-content: center;
+  align-items: center;
+  height: 130px;
+  width: 1000px;
+}
+
+#buttons {
+  margin-top: 50px;
+  width: 1000px;
+  display: flex;
+  justify-content: space-evenly;
+
+  #btn-start {
+    font-family: 'Press Start 2P';
+    font-size: 2rem;
+    padding: 15px;
+    border: 10px solid #dc4d4d;
+    width: 300px;
+  }
+
+  #btn-start:hover {
+    border: 10px dashed #dc4d4d;
+  }
+
+  #btn-start:focus {
+    outline: none;
+  }
+
+  #btn-hit {
+    font-family: 'Press Start 2P';
+    font-size: 2rem;
+    padding: 15px;
+    border: 10px solid #dc4d4d;
+    width: 200px;
+  }
+
+  #btn-hit:hover {
+    border: 10px dashed #dc4d4d;
+  }
+
+  #btn-hit:focus {
+    outline: none;
+  }
+
+  #btn-stand {
+    font-family: 'Press Start 2P';
+    font-size: 2rem;
+    padding: 15px;
+    border: 10px solid #dc4d4d;
+    width: 250px;
+  }
+
+  #btn-stand:hover {
+    border: 10px dashed #dc4d4d;
+  }
+
+  #btn-stand:focus {
+    outline: none;
+  }
+}
+
+.card {
+  border: 2px solid black;
+  border-radius: 6px;
+  padding-top: 5px;
+  margin: 0 5px 0 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100px;
+  width: 70px;
+  background-color: white;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.default-card {
+  border: 6px solid whitesmoke;
+  background-color: #dc4d4d;
+  border-radius: 6px;
+  padding-top: 5px;
+  height: 100px;
+  width: 70px;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.suit-hearts {
+  height: 40px;
+  width: 40px;
+  background: url(/img/heart.png);
+  background-size: 40px;
+}
+
+.suit-diamonds {
+  height: 40px;
+  width: 40px;
+  background-image: url(/img/diamond.png);
+  background-size: 40px;
+}
+
+.suit-clubs {
+  height: 40px;
+  width: 40px;
+  background-image: url(/img/club.png);
+  background-size: 40px;
+}
+
+.suit-spades {
+  height: 40px;
+  width: 40px;
+  background-image: url(/img/spade.png);
+  background-size: 40px;
+}
+
+.value {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.75rem;
 }

@@ -107,10 +107,12 @@ function renderUI() {
   renderHand();
 
   document.getElementById('player-name').innerHTML = PLAYER.Name;
-  document.getElementById('player-points').innerHTML = PLAYER.Points;
+  document.getElementById('player-points').innerHTML =
+    'Count: ' + PLAYER.Points;
 
   document.getElementById('dealer-name').innerHTML = DEALER.Name;
-  document.getElementById('dealer-points').innerHTML = DEALER.Points;
+  document.getElementById('dealer-points').innerHTML =
+    'Count: ' + DEALER.Points;
 }
 
 // deal 2 cards each
@@ -175,7 +177,7 @@ function updatePoints() {
 
 // update deck
 function updateDeck() {
-  document.getElementById('deck').innerHTML = deck.length;
+  document.getElementById('deck').innerHTML = 'Deck: ' + deck.length + ' Cards';
 }
 
 // reset game
@@ -205,7 +207,8 @@ function startGame() {
     for (let i = 0; i < PLAYER.Hand.length; i++) {
       if (PLAYER.Hand[i].Weight == 11) {
         PLAYER.Points -= 10;
-        document.getElementById('player-points').innerHTML = PLAYER.Points;
+        document.getElementById('player-points').innerHTML =
+          'Count: ' + PLAYER.Points;
       }
     }
   }
@@ -214,7 +217,8 @@ function startGame() {
     for (let i = 0; i < DEALER.Hand.length; i++) {
       if (DEALER.Hand[i].Weight == 11) {
         DEALER.Points -= 10;
-        document.getElementById('dealer-points').innerHTML = DEALER.Points;
+        document.getElementById('dealer-points').innerHTML =
+          'Count: ' + DEALER.Points;
       }
     }
   }
@@ -233,7 +237,8 @@ function hitMe() {
     for (let i = 0; i < PLAYER.Hand.length; i++) {
       if (PLAYER.Hand[i].Weight == 11) {
         PLAYER.Points -= 10;
-        document.getElementById('player-points').innerHTML = PLAYER.Points;
+        document.getElementById('player-points').innerHTML =
+          'Count: ' + PLAYER.Points;
       }
     }
   }
@@ -260,7 +265,8 @@ function stand() {
       for (let i = 0; i < PLAYER.Hand.length; i++) {
         if (PLAYER.Hand[i].Weight == 11) {
           PLAYER.Points -= 10;
-          document.getElementById('player-points').innerHTML = PLAYER.Points;
+          document.getElementById('player-points').innerHTML =
+            'Count: ' + PLAYER.Points;
         }
       }
     }
@@ -269,18 +275,22 @@ function stand() {
       for (let i = 0; i < DEALER.Hand.length; i++) {
         if (DEALER.Hand[i].Weight == 11) {
           DEALER.Points -= 10;
-          document.getElementById('dealer-points').innerHTML = DEALER.Points;
+          document.getElementById('dealer-points').innerHTML =
+            'Count: ' + DEALER.Points;
         }
       }
     }
   }
-  winCondition();
 
   if (DEALER.Points > 21) {
     document.getElementById('result').innerHTML = 'Dealer Busted!';
     winPlayer();
     btnHit.disabled = true;
     btnStand.disabled = true;
+  }
+
+  if (DEALER.Points <= 21) {
+    winCondition();
   }
 }
 
