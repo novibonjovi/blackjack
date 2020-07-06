@@ -1,3 +1,3 @@
 # Javascript Blackjack
 
-[https://novibonjovi.github.io/blackjack/](https://novibonjovi.github.io/blackjack/)
+[View in Browser](https://novibonjovi.github.io/blackjack/)
